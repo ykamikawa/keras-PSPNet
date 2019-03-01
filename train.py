@@ -26,13 +26,13 @@ def argparer():
     parser.add_argument("--epoch_steps", default=6000, type=int,
             help="number of epoch step")
     parser.add_argument("--val_steps", default=1000, type=int,
-            help="number of valdation step")
+            help="number of validation step")
     parser.add_argument("--n_labels", default=20, type=int,
             help="Number of label")
     parser.add_argument("--input_shape", default=(512, 512, 3),
             help="Input images shape")
     parser.add_argument("--output_stride", default=16, type=int,
-            help="output stirde")
+            help="output stride")
     parser.add_argument("--output_mode", default="softmax", type=str,
             help="output activation")
     parser.add_argument("--upsample_type", default="deconv", type=str,
@@ -40,7 +40,7 @@ def argparer():
     parser.add_argument("--loss", default="categorical_crossentropy",
             type=str, help="loss function")
     parser.add_argument("--optimizer", default="adadelta", type=str,
-            help="oprimizer")
+            help="optimizer")
     parser.add_argument("--gpu", default="0", type=str,
             help="number of gpu")
     args = parser.parse_args()
@@ -87,7 +87,7 @@ def main(args):
                 log_dir=args.log_dir,
                 write_images=True)
 
-        # set generater
+        # set generator
         train_gen = data_gen_small(
                 trainimg_dir,
                 trainmsk_dir,
@@ -117,7 +117,7 @@ def main(args):
                 optimizer=args.optimizer,
                 metrics=["accuracy"])
 
-        # fit with genarater
+        # fit with generator
         pspnet.fit_generator(
                 generator=train_gen,
                 steps_per_epoch=args.epoch_steps,
