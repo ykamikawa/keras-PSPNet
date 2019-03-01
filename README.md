@@ -1,25 +1,25 @@
 # keras-PSPNet
 
-Pyramid Scene persing Network is a model of semantic segmentation based on Fully Comvolutional Network.
+Pyramid Scene persing Network is a model of semantic segmentation based on Fully Convolutional Network.
 This repository contains the implementation of learning and testing in keras and tensorflow.
 
 
-## Architecutre
+## Architecture
 
-- atrous convalution
+- atrous convolution
 - residual module
 - pyramid pooling module
 
 ## Prerequirements
 
-- python3.6
+- python 3.6
 - opencv for python
-- keras,tensorflow
+- keras, tensorflow
 
 ## Usage
 
 ### train
-- Segmentation involveing multiple categories
+- Segmentation involving multiple categories
 
     ` python train.py --options `
 
@@ -36,7 +36,7 @@ This repository contains the implementation of learning and testing in keras and
 
 ### test
 - Input test image
-- responce json format involving category name and color(pixel based prediction)
+- responce json format involving category name and color (pixel based prediction)
 
     ` python predict.py --input_path [path/to//input_imahge] `
 
