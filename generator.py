@@ -29,7 +29,7 @@ def data_gen_small(img_dir, mask_dir, lists, batch_size, dims, n_labels):
             array_img = img_to_array(resized_img) / 255
             imgs.append(array_img)
             # masks
-            mask_path = os.path.join(img_dir, lists.iloc[i, 0], '.png')
+            mask_path = os.path.join(mask_dir, lists.iloc[i, 0], '.png')
             original_mask = cv2.imread(mask_path)
             resized_mask = cv2.resize(original_mask, (dims[0], dims[1]))
             array_mask = category_label(resized_mask[:, :, 0], dims, n_labels)
